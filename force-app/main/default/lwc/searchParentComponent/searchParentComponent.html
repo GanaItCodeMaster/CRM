@@ -1,0 +1,11 @@
+<template>
+
+    <lightning-card title="Organization's Accounts & Contacts Management">
+        <c-input-search-component onsearchevent={handleSearch}></c-input-search-component>
+    </lightning-card>
+
+    <lightning-card>
+        <c-show-search-results-component searched-text={searchParentText}></c-show-search-results-component>
+    </lightning-card>
+
+</template>

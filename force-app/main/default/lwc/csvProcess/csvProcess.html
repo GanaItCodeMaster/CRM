@@ -1,0 +1,20 @@
+<template>
+    <div class="slds-var-p-around_small">
+        <lightning-button 
+        variant="brand"
+        label="Export Data to CSV"
+        title="Export Data to CSV"
+        icon-name="utility:download"
+        onclick={handleBtnExportToExcel}
+        disabled={checkRecord}></lightning-button>
+    </div>
+    <div style="height: 350px;">
+        <lightning-datatable 
+            key-field="Id" 
+            data={accountData}
+            columns={columns}             
+            show-row-number-column="false" 
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </div>
+</template>

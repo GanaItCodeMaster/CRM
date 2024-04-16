@@ -1,0 +1,34 @@
+<template>
+    
+    <lightning-card title={title}>
+    
+        <template lwc:if={hasContacts}>
+            <template for:each={contacts} for:item='contact'>
+                <lightning-layout key={contact.Id} class="slds-box slds-m-around_small">
+                    
+                    <lightning-layout-item size="8px">
+                        {contact.Name}
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="4">
+                        <lightning-button-icon icon-name="utility:edit" variant="brand" alternative-text="Edit"
+                            class="slds-m-left_xx-small" title="Edit"
+                            onclick={handleEditContact} data-contact-id={contact.Id}></lightning-button-icon>
+                        <lightning-button-icon icon-name="utility:delete" variant="brand" alternative-text="Delete"
+                            class="slds-m-left_xx-small" title="Delete" 
+                            onclick={handleContactDelete} data-contact-id={contact.Id}></lightning-button-icon>
+                    </lightning-layout-item>
+    
+                </lightning-layout>
+            </template>            
+        </template>
+        <template lwc:else>
+            <div class="slds-align_absolute-center">
+                No Contacts Found
+            </div>
+        </template>
+
+
+    </lightning-card>
+
+</template>

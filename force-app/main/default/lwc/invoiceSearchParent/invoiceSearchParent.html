@@ -1,0 +1,10 @@
+<template>
+    
+    <lightning-card  title="Invoice Search">
+        <c-invoice-search-data-entry onsearchevent={handleParentSearch}></c-invoice-search-data-entry>
+    </lightning-card>  
+
+    <lightning-card>        
+        <c-invoice-search-show-results invoice-show-results-text={searchInvoiceText}></c-invoice-search-show-results>
+    </lightning-card>    
+</template>
